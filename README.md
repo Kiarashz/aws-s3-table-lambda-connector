@@ -6,12 +6,14 @@ aws-s3-table-lambda-connector
 ```
 export AWS_ACCESS_KEY_ID="XX"
 export AWS_SECRET_ACCESS_KEY="X"
+export AWS_DEFAULT_REGION="us-east-1"
 
 docker build -t duckdb-lambda .
 
 
 docker run -p 9000:8080 \
-    -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+    -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
     -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
     duckdb-lambda
 
